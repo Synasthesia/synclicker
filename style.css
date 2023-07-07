@@ -1,0 +1,7 @@
+#crayon {
+	width: 500px;
+	height: 500px;
+	background-image: url(/images/crayons.jpg);
+	background-repeat: none;
+	background-size: cover;
+}
