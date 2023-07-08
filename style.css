@@ -1,15 +1,15 @@
-html{ 
+html {
 	font-family: 'Maven Pro', sans-serif;
 	background: url(/images/spacebg.png);
 	background-repeat: none;
-	background-size:cover;
+	background-size: cover;
 	color: white;
 }
 header {
 	font-family: 'Agdasima', sans-serif;
 	display: block;
 	margin-top: 15px;
-	margin-left: 25px
+	margin-left: 25px;
 }
 body {
 	display: grid;
@@ -39,7 +39,7 @@ footer {
 	grid-row: 2;
 	grid-column: 2;
 }
-body #right { 
+body #right {
 	grid-row: 2;
 	grid-column: 3;
 }
@@ -59,7 +59,6 @@ body #right {
 	background: url(/images/new_planet.png);
 	background-position: center;
 	background-size: contain;
-
 }
 body #planet {
 	display: flex;

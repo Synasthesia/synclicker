@@ -70,7 +70,3 @@ function startAutoClickers() {
 		setInterval(simAutoClickers, 1000);
 	}
 }
-const body = document.querySelector('body');
-body.addEventListener('click', function() {
-	console.log(multiIncrease);
-})
