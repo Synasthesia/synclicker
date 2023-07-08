@@ -1,7 +1,73 @@
-#crayon {
-	width: 500px;
-	height: 500px;
-	background-image: url(/images/crayons.jpg);
+html{ 
+	font-family: 'Maven Pro', sans-serif;
+	background: url(/images/spacebg.png);
 	background-repeat: none;
-	background-size: cover;
+	background-size:cover;
+	color: white;
+}
+header {
+	font-family: 'Agdasima', sans-serif;
+	display: block;
+	margin-top: 15px;
+	margin-left: 25px
+}
+body {
+	display: grid;
+	width: 95vw;
+	height: 95vh;
+	grid-template-rows: 150px auto 150px;
+	grid-template-columns: 200px 1fr 200px;
+	justify-content: center;
+}
+footer {
+	font-family: 'Ysabeau SC', sans-serif;
+	display: flex;
+	flex-direction: column;
+	grid-row: 3;
+	grid-column: 2;
+	justify-self: center;
+	align-self: end;
+	margin-bottom: 100px;
+}
+#left {
+	display: grid;
+	grid-row: 1;
+	grid-column: 1;
+}
+#center {
+	display: grid;
+	grid-row: 2;
+	grid-column: 2;
+}
+body #right { 
+	grid-row: 2;
+	grid-column: 3;
+}
+#right {
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+}
+#right #autoclicker {
+	margin-top: 20vh;
+}
+#planet {
+	height: 600px;
+	width: 600px;
+	border-radius: 50%;
+	border: 0px solid black;
+	background: url(/images/new_planet.png);
+	background-position: center;
+	background-size: contain;
+
+}
+body #planet {
+	display: flex;
+	justify-self: center;
+	align-self: center;
+}
+#chunks-count {
+	text-align: start;
+	font-weight: 800;
+	font-size: 24px;
 }

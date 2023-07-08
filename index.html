@@ -3,12 +3,33 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>ClickerGame</title>
+		<title>PlanetClicker</title>
 		<link rel="stylesheet" type="text/css" href="/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Agdasima&family=Maven+Pro&family=Ysabeau+SC"
+			rel="stylesheet"
+		/>
 	</head>
-	<header></header>
+	<header id="left">
+		<h1>PlanetClicker by Synasthesia</h1>
+	</header>
 	<body>
-		<input id="crayon" type="button" />
+		<div id="center">
+			<button id="planet"></button>
+			<p id="chunks-count">Planet Chunks: 0</p>
+		</div>
+		<div id="right">
+			<p id="autoclicker">Autoclickers: 0</p>
+			<button id="upgrade-autoclick">Upgrade: 10</button>
+			<p id="multiplier">Clicker Multi: 0</p>
+			<button id="upgrade-multi">Upgrade: 100</button>
+		</div>
+		<script src="/app.js"></script>
 	</body>
-	<footer>&copy; @Synasthesia - <a href=""</footer>
+	<footer>
+		<div id="copyright">
+			&copy;
+			<a href="https://github.com/Synasthesia" target="_blank">@Synasthesia</a>
+		</div>
+	</footer>
 </html>
