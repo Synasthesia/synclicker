@@ -10,14 +10,12 @@ let multiCount = 0;
 let multiIncrease = 0;
 let planetChunks = parseFloat((0).toFixed(2));
 let autoclickUpgCost = 10;
-let multiUpgCost = 10;
+let multiUpgCost = 100;
 let costMulti = 1.1;
 let autoClickerPurchased = false;
 let autoClickerMath = 0;
 
 planetButton.addEventListener('click', planetClick);
-
-
 
 autoclickUpg.addEventListener('click', function () {
 	if (planetChunks >= autoclickUpgCost) {
@@ -25,8 +23,12 @@ autoclickUpg.addEventListener('click', function () {
 		planetChunks -= autoclickUpgCost;
 		autoclickUpgCost *= costMulti;
 		autoclickText.innerText = `Autoclickers: ${autoClickersCount}`;
-		autoclickUpg.innerText = `Upgrade: ${parseFloat((autoclickUpgCost).toFixed(2))}`;
-		planetChunksText.innerText = `Planet Chunks: ${parseFloat((planetChunks).toFixed(2))}`;
+		autoclickUpg.innerText = `Upgrade: ${parseFloat(
+			autoclickUpgCost.toFixed(2)
+		)}`;
+		planetChunksText.innerText = `Planet Chunks: ${parseFloat(
+			planetChunks.toFixed(2)
+		)}`;
 		startAutoClickers();
 	}
 });
@@ -36,32 +38,39 @@ function planetClick() {
 	} else {
 		planetChunks += 1 * multiIncrease;
 	}
-	planetChunksText.innerText = `Planet Chunks: ${parseFloat((planetChunks).toFixed(2))}`;
+	planetChunksText.innerText = `Planet Chunks: ${parseFloat(
+		planetChunks.toFixed(2)
+	)}`;
 }
-
 
 multiUpg.addEventListener('click', function () {
 	if (planetChunks >= multiUpgCost) {
 		multiCount++;
 		planetChunks -= multiUpgCost;
 		multiUpgCost *= costMulti;
-		multiIncrease = (1 + 0.1 * multiCount);
-		multiText.innerText = `Clicker Multi: ${multiCount} (${parseFloat((multiIncrease).toFixed(2))})`;
+		multiIncrease = 1 + 0.1 * multiCount;
+		multiText.innerText = `Clicker Multi: ${multiCount} (${parseFloat(
+			multiIncrease.toFixed(2)
+		)})`;
 		multiUpg.innerText = `Upgrade: ${multiUpgCost.toFixed(1)}`;
-		planetChunksText.innerText = `Planet Chunks: ${parseFloat((planetChunks).toFixed(2))}`;
+		planetChunksText.innerText = `Planet Chunks: ${parseFloat(
+			planetChunks.toFixed(2)
+		)}`;
 	}
 });
 
 function simAutoClickers() {
 	if (multiIncrease == 0) {
-		autoClickerMath += autoClickersCount
+		autoClickerMath += autoClickersCount;
 	} else {
-	autoClickerMath += autoClickersCount * multiIncrease; 
+		autoClickerMath += autoClickersCount * multiIncrease;
 	}
 	const intClicks = Math.floor(autoClickerMath);
 	planetChunks += intClicks;
 	autoClickerMath -= intClicks;
-	planetChunksText.innerText = `Planet Chunks: ${parseFloat((planetChunks).toFixed(2))}`;
+	planetChunksText.innerText = `Planet Chunks: ${parseFloat(
+		planetChunks.toFixed(2)
+	)}`;
 }
 function startAutoClickers() {
 	if (autoClickersCount > 0 && !autoClickerPurchased) {
