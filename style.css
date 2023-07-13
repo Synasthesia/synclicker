@@ -4,6 +4,7 @@ html {
 	background-repeat: none;
 	background-size: cover;
 	color: white;
+	overflow: hidden;
 }
 header {
 	font-family: 'Agdasima', sans-serif;
@@ -13,8 +14,8 @@ header {
 }
 body {
 	display: grid;
-	width: 95vw;
-	height: 95vh;
+	width: 100vw;
+	height: 100vh;
 	grid-template-rows: 150px auto 150px;
 	grid-template-columns: 200px 1fr 200px;
 	justify-content: center;
@@ -38,6 +39,20 @@ footer {
 	display: grid;
 	grid-row: 2;
 	grid-column: 2;
+}
+#top-right {
+	grid-row: 1;
+	grid-column: 3;
+	justify-self: center;
+	align-self: center;
+}
+#top-right button {
+	border: 0px solid black;
+	width: 50px;
+	height: 25px;
+	border-radius: 12%;
+	color: white;
+	background-color: #222;
 }
 body #right {
 	grid-row: 2;

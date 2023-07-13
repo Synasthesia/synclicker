@@ -4,6 +4,7 @@ const autoclickUpg = document.getElementById('upgrade-autoclick');
 const multiUpg = document.getElementById('upgrade-multi');
 const autoclickText = document.getElementById('autoclicker');
 const multiText = document.getElementById('multiplier');
+const reset = document.getElementById('reset');
 
 let autoClickersCount = 0;
 let multiCount = 0;
@@ -43,7 +44,7 @@ function planetClick() {
 	)}`;
 }
 
-multiUpg.addEventListener('click', function () {
+multiUpg.addEventListener('click', () => {
 	if (planetChunks >= multiUpgCost) {
 		multiCount++;
 		planetChunks -= multiUpgCost;
@@ -59,7 +60,7 @@ multiUpg.addEventListener('click', function () {
 	}
 });
 
-function simAutoClickers() {
+const simAutoClickers = function () {
 	if (multiIncrease == 0) {
 		autoClickerMath += autoClickersCount;
 	} else {
@@ -71,11 +72,18 @@ function simAutoClickers() {
 	planetChunksText.innerText = `Planet Chunks: ${parseFloat(
 		planetChunks.toFixed(2)
 	)}`;
-}
+};
 function startAutoClickers() {
 	if (autoClickersCount > 0 && !autoClickerPurchased) {
 		autoClickerPurchased = true;
 		simAutoClickers();
-		setInterval(simAutoClickers, 1000);
+		var autoClickerIntervalId = setInterval(simAutoClickers, 1000);
+		console.log(autoClickerIntervalId);
 	}
 }
+
+reset.addEventListener('click', () => {
+	if (confirm('Are you sure you want to reset the game?')) {
+		location.reload();
+	}
+});
