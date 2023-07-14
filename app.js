@@ -31,6 +31,8 @@ autoclickUpg.addEventListener('click', function () {
 			planetChunks.toFixed(2)
 		)}`;
 		startAutoClickers();
+	} else {
+		alert('Not enough Planet Chunks!')
 	}
 });
 function planetClick() {
@@ -57,8 +59,9 @@ multiUpg.addEventListener('click', () => {
 		planetChunksText.innerText = `Planet Chunks: ${parseFloat(
 			planetChunks.toFixed(2)
 		)}`;
-	}
-});
+	} else {
+		alert('Not enough Planet Chunks!')
+}});
 
 const simAutoClickers = function () {
 	if (multiIncrease == 0) {
@@ -87,3 +90,20 @@ reset.addEventListener('click', () => {
 		location.reload();
 	}
 });
+
+//check for updates to the planetChunks text, and enable/disable the buttons
+const observer = new MutationObserver((m) => {
+	const mut = m[0];
+	if (mut.type === 'characterData') {
+		buttonModifyDisable();
+	}
+});
+
+const observerConfig = { characterData: true };
+
+observer.observe(planetChunksText, observerConfig);
+
+ function buttonModifyDisable() {
+	planetChunks < autoclickUpgCost ? autoclickUpg.disabled = true : autoclickUpg.disabled = false;
+	planetChunks < multiUpgCost ? multiUpg.disabled = true : multiUpg.disabled = false;
+ }

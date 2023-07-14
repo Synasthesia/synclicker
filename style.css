@@ -8,16 +8,16 @@ html {
 }
 header {
 	font-family: 'Agdasima', sans-serif;
-	display: block;
+	display: grid;
 	margin-top: 15px;
 	margin-left: 25px;
 }
 body {
 	display: grid;
-	width: 100vw;
+	width: 95vw;
 	height: 100vh;
 	grid-template-rows: 150px auto 150px;
-	grid-template-columns: 200px 1fr 200px;
+	grid-template-columns: 215px 1fr 200px;
 	justify-content: center;
 }
 footer {
@@ -33,7 +33,18 @@ footer {
 #left {
 	display: grid;
 	grid-row: 1;
-	grid-column: 1;
+	grid-column: 1 / 2;
+}
+#inspo {
+	align-items: start;
+	justify-content: end;
+	display: inline-flex;
+	grid-row: 1;
+	grid-column: 2;
+	width: 825px;
+}
+#inspo a {
+	color: white;
 }
 #center {
 	display: grid;
