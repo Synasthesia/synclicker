@@ -16,6 +16,9 @@ let costMulti = 1.1;
 let autoClickerPurchased = false;
 let autoClickerMath = 0;
 
+//TODO add overlay to invalid button clicks
+//TODO add overlay to inspiration header
+
 planetButton.addEventListener('click', planetClick);
 
 autoclickUpg.addEventListener('click', function () {
